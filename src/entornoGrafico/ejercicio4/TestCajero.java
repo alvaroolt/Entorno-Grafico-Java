@@ -61,6 +61,22 @@ public class TestCajero {
     });
   }
 
+  int cont500e = 0;
+  int cont200e = 0;
+  int cont100e = 0;
+  int cont50e = 0;
+  int cont20e = 0;
+  int cont10e = 0;
+  int cont5e = 0;
+  int cont2e = 0;
+  int cont1e = 0;
+  int cont50cent = 0;
+  int cont20cent = 0;
+  int cont10cent = 0;
+  int cont5cent = 0;
+  int cont2cent = 0;
+  int cont1cent = 0;
+
   /**
    * Create the application.
    */
@@ -258,23 +274,23 @@ public class TestCajero {
 
           double dinero = Double.parseDouble(dineroACambiar.getText());
 
-          Cajero.desglosarDinero(dinero);
+          desglosarDinero(dinero);
 
-          textField_1cent.setText("" + Cajero.getCont1cent());
-          textField_2cent.setText("" + Cajero.getCont2cent());
-          textField_5cent.setText("" + Cajero.getCont5cent());
-          textField_10cent.setText("" + Cajero.getCont10cent());
-          textField_20cent.setText("" + Cajero.getCont20cent());
-          textField_50cent.setText("" + Cajero.getCont50cent());
-          textField_1euro.setText("" + Cajero.getCont1e());
-          textField_2euros.setText("" + Cajero.getCont2e());
-          textField_5euros.setText("" + Cajero.getCont5e());
-          textField_10euros.setText("" + Cajero.getCont10e());
-          textField_20euros.setText("" + Cajero.getCont20e());
-          textField_50euros.setText("" + Cajero.getCont50e());
-          textField_100euros.setText("" + Cajero.getCont100e());
-          textField_200euros.setText("" + Cajero.getCont200e());
-          textField_500euros.setText("" + Cajero.getCont500e());
+          textField_1cent.setText("" + cont1cent);
+          textField_2cent.setText("" + cont2cent);
+          textField_5cent.setText("" + cont5cent);
+          textField_10cent.setText("" + cont10cent);
+          textField_20cent.setText("" + cont20cent);
+          textField_50cent.setText("" + cont50cent);
+          textField_1euro.setText("" + cont1e);
+          textField_2euros.setText("" + cont2e);
+          textField_5euros.setText("" + cont5e);
+          textField_10euros.setText("" + cont10e);
+          textField_20euros.setText("" + cont20e);
+          textField_50euros.setText("" + cont50e);
+          textField_100euros.setText("" + cont100e);
+          textField_200euros.setText("" + cont200e);
+          textField_500euros.setText("" + cont500e);
 
         } catch (Exception ee) {
 
@@ -286,4 +302,70 @@ public class TestCajero {
     botonCambio.setBounds(251, 28, 111, 27);
     frame_cajero.getContentPane().add(botonCambio);
   }
+
+  public void desglosarDinero(double dinero) {
+
+    while (dinero >= 500) {
+      cont500e++;
+      dinero -= 500;
+    }
+    while (dinero >= 200) {
+      cont200e++;
+      dinero -= 200;
+    }
+    while (dinero >= 100) {
+      cont100e++;
+      dinero -= 100;
+    }
+    while (dinero >= 50) {
+      cont50e++;
+      dinero -= 50;
+    }
+    while (dinero >= 20) {
+      cont20e++;
+      dinero -= 20;
+    }
+    while (dinero >= 10) {
+      cont10e++;
+      dinero -= 10;
+    }
+    while (dinero >= 5) {
+      cont5e++;
+      dinero -= 5;
+    }
+    while (dinero >= 2) {
+      cont2e++;
+      dinero -= 2;
+    }
+    while (dinero >= 1) {
+      cont1e++;
+      dinero -= 1;
+    }
+    while (dinero >= 0.50) {
+      cont50cent++;
+      dinero -= 0.50;
+    }
+    while (dinero >= 0.20) {
+      cont20cent++;
+      dinero -= 0.20;
+    }
+    while (dinero >= 0.10) {
+      cont10cent++;
+      dinero -= 0.10;
+    }
+    while (dinero >= 0.05) {
+      cont5cent++;
+      dinero -= 0.05;
+    }
+    while (dinero >= 0.02) {
+      cont2cent++;
+      dinero -= 0.02;
+    }
+
+    while (dinero > 0.01) {
+      cont1cent++;
+      dinero -= 2;
+    }
+  }
+
 }
